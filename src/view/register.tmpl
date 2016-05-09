@@ -1,0 +1,153 @@
+<ul class="nav nav-pills">
+    <li role="presentation"><a ui-sref="login">Login</a></li>
+</ul>
+<div class="container" ng-controller="TodoListController as todoList">
+  	<br><br><img src="src/image/register.png"/><br><br><br>
+  	<font size="3" color="red">Please fill-in all the field with *</font><br><br>
+  	<h3>Login Information</h3><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Email *</label>
+				    <input type="email" class="form-control" id="email1" ng-model="email1" placeholder="example@ku.ac.th">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Re-enter Email *</label>
+				    <input type="email" class="form-control" id="email2" ng-model="email2" placeholder="example@ku.ac.th">
+				</div>
+			</div>
+		</form>
+	</div><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Password (at least 8 characters) *</label>
+				    <input type="password" class="form-control" id="password1" ng-model="password1">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Re-enter Password *</label>
+				    <input type="password" class="form-control" id="password2" ng-model="password2">
+				</div>
+			</div>
+		</form>
+	</div><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Student ID (This will be your login ID) *</label>
+				    <input type="text" class="form-control" id="studentID" ng-model="studentID" placeholder="5610545678">
+				</div>
+			</div>
+		</form>
+	</div><br><hr><br>
+	<h3>Address</h3><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-6">
+				<div class="form-group">
+				    <label for="exampleInputName2">Address *</label>
+				    <textarea class="form-control" rows="3" id="address" ng-model="address"></textarea>
+				</div>
+			</div>
+		</form>
+	</div><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Province *</label>
+				    <input type="text" class="form-control" id="province" ng-model="province" placeholder="Bangkok">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Zip Code *</label>
+				    <input type="text" class="form-control" id="zip" ng-model="zip" placeholder="10230">
+				</div>
+			</div>
+		</form>
+	</div><br><hr><br>
+	<h3>Personal Information</h3><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">First Name *</label>
+				    <input type="text" class="form-control" id="firstName" ng-model="firstName" placeholder="Varis">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Last Name *</label>
+				    <input type="text" class="form-control" id="lastName" ng-model="lastName" placeholder="Kritpolchai">
+				</div>
+			</div>
+		</form>
+	</div><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Phone Number</label>
+				    <input type="text" class="form-control" id="phoneNum" ng-model="phoneNum" placeholder="02-345-6789">
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Mobile Number *</label>
+				    <input type="text" class="form-control" id="mobileNum" ng-model="mobileNum" placeholder="081-234-5678">
+				</div>
+			</div>
+		</form>
+	</div><br>
+	<div class="row">
+		<form class="form-group">
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputName2">Gender *</label>
+				    <select class="form-control">
+  						<option>Male</option>
+  						<option>Female</option>
+  					</select>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+				    <label for="exampleInputEmail2">Birthdate *</label>
+				    <input type="text" class="form-control" id="birthdate" ng-model="birthdate" placeholder="25/04/95">
+				</div>
+			</div>
+		</form>
+	</div><br><br><br>
+	<p>
+	  	<button type="button" ng-click="register(this)" class="btn btn-primary btn-lg">Register</button>&nbsp;&nbsp;
+	  	<button type="button" ng-click="storeClear(this)" data-toggle="modal" data-target="#clearModal" class="btn btn-default btn-lg">Clear Field</button>
+	</p><br><br><br><br>
+</div>
+
+<!-- Clear Field Modal -->
+<div id="clearModal" class="modal fade" role="dialog" ng-controller="TodoListController as todoList">
+  	<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Confirmation</h4>
+      		</div>
+      		<div class="modal-body">
+        		<p>Are you sure you want to clear all the fields?</p>
+      		</div>
+      		<div class="modal-footer">
+      			<button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="clearField()">Clear Field</button>
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      		</div>
+    	</div>
+  	</div>
+</div>

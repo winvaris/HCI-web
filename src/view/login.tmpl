@@ -1,0 +1,30 @@
+<ul class="nav nav-pills">
+    <li role="presentation"><a ui-sref="register">Register</a></li>
+</ul>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="src/image/arrow.png" height="50" width="50"/>
+<div class="container" ng-controller="TodoListController as todoList">
+    <br><br><img src="src/image/logo.jpg"/><br><br><br>
+    <form>
+        <div class="row">
+            <form class="form-group">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <label for="exampleInputName2">Student ID</label>
+                        <input type="text" class="form-control" id="id" placeholder="5610545678">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <form class="form-group">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <label for="exampleInputName2">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+            </form>
+        </div><br>
+        <button type="submit" ng-click="login()" class="btn btn-default">Login</button>
+    </form>
+</div>
