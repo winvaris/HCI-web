@@ -18,4 +18,8 @@ angular.module('todoApp')
       url: "/register",
       templateUrl: "src/view/register.tmpl"
     })
+    .state('profile', {
+      url: "/profile",
+      templateUrl: "src/view/profile.tmpl"
+    })
 });

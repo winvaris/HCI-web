@@ -30,6 +30,8 @@ angular.module('todoApp', ['ui.router'])
             $rootScope.tempCourse = {}
         if ($rootScope.tempDropCourse == undefined)
             $rootScope.tempDropCourse = ''
+        if ($rootScope.loginFailed == undefined)
+            $rootScope.loginFailed = false;
 
         $http.get('src/list.json')
         .success(function(data) {
@@ -50,10 +52,12 @@ angular.module('todoApp', ['ui.router'])
                     $rootScope.loggedIn = true;
                     $state.go('addcourse');
                     console.log($rootScope.currentAccount);
+                    $rootScope.loginFailed = false;
                 }
                 else
                 {
                     console.log('wrong id or password');
+                    $rootScope.loginFailed = true;
                 }
             }
         }
